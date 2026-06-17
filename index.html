@@ -4,12 +4,8 @@
     <meta charset="UTF-8" />
     <title>Oscar Beckett — Resume</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Tailwind via CDN (good for GitHub Pages). For production/perf, you can build Tailwind locally. -->
     <script src="https://cdn.tailwindcss.com"></script>
-
     <style>
-      /* Smooth panel transitions (fade/slide) */
       .page-panel {
         transition: opacity 0.25s ease-out, transform 0.25s ease-out;
       }
@@ -25,11 +21,8 @@
         transform: translateY(0);
         position: static;
       }
-
-      /* Hover/tap reveal cards (morph-ish) */
       .hover-card {
-        transition: box-shadow 0.25s ease-out, transform 0.25s ease-out,
-          background-color 0.25s ease-out;
+        transition: box-shadow 0.25s ease-out, transform 0.25s ease-out, background-color 0.25s ease-out;
       }
       .hover-card.open {
         transform: translateY(-2px);
@@ -38,13 +31,10 @@
       }
       .card-summary,
       .card-details {
-        transition: opacity 0.25s ease-out, transform 0.25s ease-out,
-          max-height 0.35s ease-out;
+        transition: opacity 0.25s ease-out, transform 0.25s ease-out, max-height 0.35s ease-out;
         overflow: hidden;
       }
-      .card-summary {
-        max-height: 84px;
-      }
+      .card-summary { max-height: 90px; }
       .card-details {
         max-height: 0;
         opacity: 0;
@@ -58,78 +48,41 @@
       .hover-card.open .card-details {
         opacity: 1;
         transform: translateY(0);
-        max-height: 360px;
+        max-height: 420px;
       }
-
-      /* Toast transitions */
       #toast {
         transition: opacity 0.2s ease-out, transform 0.2s ease-out;
       }
-
-      /* Slightly smoother nav hover scaling */
-      .navbtn {
+      .navbtn, .tabbtn {
         transition: background-color 0.18s ease-out, transform 0.25s ease-out;
       }
-      .navbtn:hover {
-        transform: scale(1.01);
-      }
-      .tabbtn {
-        transition: background-color 0.18s ease-out, transform 0.25s ease-out;
-      }
-      .tabbtn:hover {
+      .navbtn:hover, .tabbtn:hover {
         transform: scale(1.01);
       }
     </style>
   </head>
 
   <body class="bg-slate-950 text-slate-100">
-    <!-- Toast -->
-    <div
-      id="toast"
-      class="fixed top-5 left-1/2 z-50 -translate-x-1/2 rounded-xl bg-white/10 px-4 py-2 text-sm text-white backdrop-blur-md ring-1 ring-white/20 opacity-0 pointer-events-none"
-      role="status"
-      aria-live="polite"
-    >
+    <div id="toast" class="fixed top-5 left-1/2 z-50 -translate-x-1/2 rounded-xl bg-white/10 px-4 py-2 text-sm text-white backdrop-blur-md ring-1 ring-white/20 opacity-0 pointer-events-none" role="status" aria-live="polite">
       ✅ <span id="toast-text">Copied</span>
     </div>
 
-    <!-- Ambient gradient orbs -->
     <div class="pointer-events-none fixed inset-0 -z-10">
-      <div
-        class="absolute -top-20 -left-20 h-96 w-96 rounded-full bg-indigo-500/20 blur-3xl"
-      ></div>
-      <div
-        class="absolute -bottom-24 -right-16 h-[28rem] w-[28rem] rounded-full bg-cyan-500/10 blur-3xl"
-      ></div>
+      <div class="absolute -top-20 -left-20 h-96 w-96 rounded-full bg-indigo-500/20 blur-3xl"></div>
+      <div class="absolute -bottom-24 -right-16 h-[28rem] w-[28rem] rounded-full bg-cyan-500/10 blur-3xl"></div>
     </div>
 
-    <div
-      class="min-h-screen w-full bg-[radial-gradient(60%_80%_at_50%_0%,_#0b1220_0%,_#0a0f1a_35%,_#05070c_100%)] text-slate-100 relative"
-    >
-      <div
-        class="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-4 py-10 lg:grid-cols-[280px_1fr]"
-      >
-        <!-- Sidebar -->
+    <div class="min-h-screen w-full bg-[radial-gradient(60%_80%_at_50%_0%,_#0b1220_0%,_#0a0f1a_35%,_#05070c_100%)] text-slate-100 relative">
+      <div class="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-4 py-10 lg:grid-cols-[280px_1fr]">
         <aside class="sticky top-6 h-max">
-          <div
-            class="rounded-2xl border border-white/10 bg-white/10 p-5 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]"
-          >
-            <!-- Header -->
+          <div class="rounded-2xl border border-white/10 bg-white/10 p-5 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]">
             <div class="flex items-start gap-4">
-              <div
-                class="relative h-14 w-14 shrink-0 overflow-hidden rounded-2xl ring-1 ring-white/20"
-              >
-                <div
-                  class="h-full w-full bg-gradient-to-br from-indigo-400/60 to-cyan-400/50"
-                ></div>
+              <div class="relative h-14 w-14 shrink-0 overflow-hidden rounded-2xl ring-1 ring-white/20">
+                <div class="h-full w-full bg-gradient-to-br from-indigo-400/60 to-cyan-400/50"></div>
               </div>
               <div>
-                <h1 class="text-xl font-semibold tracking-tight">
-                  Oscar Beckett
-                </h1>
-                <p class="text-sm text-slate-300/90">
-                  Outdoor adventurer &amp; student • Brisbane, QLD
-                </p>
+                <h1 class="text-xl font-semibold tracking-tight">Oscar Beckett</h1>
+                <p class="text-sm text-slate-300/90">Enthusiastic outdoor adventurer • Brisbane, QLD</p>
                 <p class="mt-2 flex items-center gap-2 text-xs text-slate-400/90">
                   <span class="inline-block h-2.5 w-2.5 rounded-full bg-cyan-400"></span>
                   Open to opportunities • GMT+10
@@ -137,210 +90,100 @@
               </div>
             </div>
 
-            <!-- Sidebar nav -->
             <nav class="mt-6 space-y-2" id="sidebar-nav">
-              <button
-                data-page="experience"
-                class="navbtn group flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left bg-white/10 ring-1 ring-white/20"
-              >
+              <button data-page="experience" class="navbtn group flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left bg-white/10 ring-1 ring-white/20">
                 <span class="flex h-5 w-5 items-center justify-center rounded-md bg-white/10 text-xs">💼</span>
                 <span class="font-medium tracking-tight">Experience</span>
               </button>
-
-              <button
-                data-page="education"
-                class="navbtn group flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left hover:bg-white/5"
-              >
+              <button data-page="education" class="navbtn group flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left hover:bg-white/5">
                 <span class="flex h-5 w-5 items-center justify-center rounded-md bg-white/10 text-xs">🎓</span>
                 <span class="font-medium tracking-tight">Education</span>
               </button>
-
-              <button
-                data-page="hobbies"
-                class="navbtn group flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left hover:bg-white/5"
-              >
+              <button data-page="hobbies" class="navbtn group flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left hover:bg-white/5">
                 <span class="flex h-5 w-5 items-center justify-center rounded-md bg-white/10 text-xs">🎮</span>
                 <span class="font-medium tracking-tight">Hobbies</span>
               </button>
-
-              <button
-                data-page="references"
-                class="navbtn group flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left hover:bg-white/5"
-              >
+              <button data-page="references" class="navbtn group flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left hover:bg-white/5">
                 <span class="flex h-5 w-5 items-center justify-center rounded-md bg-white/10 text-xs">👥</span>
                 <span class="font-medium tracking-tight">References</span>
               </button>
-
-              <button
-                data-page="download"
-                class="navbtn group flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left hover:bg-white/5"
-              >
+              <button data-page="qualifications" class="navbtn group flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left hover:bg-white/5">
+                <span class="flex h-5 w-5 items-center justify-center rounded-md bg-white/10 text-xs">✅</span>
+                <span class="font-medium tracking-tight">Qualifications</span>
+              </button>
+              <button data-page="download" class="navbtn group flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left hover:bg-white/5">
                 <span class="flex h-5 w-5 items-center justify-center rounded-md bg-white/10 text-xs">⬇️</span>
                 <span class="font-medium tracking-tight">Download</span>
               </button>
             </nav>
 
-            <!-- Quick actions -->
             <div class="mt-6 grid grid-cols-2 gap-2 text-xs text-slate-300/90">
-              <button
-                data-copy="email"
-                class="flex items-center justify-center gap-2 rounded-lg bg-white/5 px-3 py-2 ring-1 ring-white/10 hover:bg-white/10"
-              >
-                ✉️ email
-              </button>
-              <button
-                data-copy="phone"
-                class="flex items-center justify-center gap-2 rounded-lg bg-white/5 px-3 py-2 ring-1 ring-white/10 hover:bg-white/10"
-              >
-                📞 phone
-              </button>
+              <button data-copy="email" class="flex items-center justify-center gap-2 rounded-lg bg-white/5 px-3 py-2 ring-1 ring-white/10 hover:bg-white/10">✉️ email</button>
+              <button data-copy="phone" class="flex items-center justify-center gap-2 rounded-lg bg-white/5 px-3 py-2 ring-1 ring-white/10 hover:bg-white/10">📞 phone</button>
             </div>
           </div>
         </aside>
 
-        <!-- Main content -->
         <main class="space-y-6">
           <div class="rounded-3xl border border-white/10 bg-white/10 p-1 backdrop-blur-2xl">
-            <!-- Top tabs -->
             <div class="relative flex w-full flex-wrap items-center gap-2 p-2" id="tab-bar">
-              <button data-page="experience" class="tabbtn tab-btn relative rounded-xl px-3 py-2 text-sm text-slate-200/90 bg-white/10 ring-1 ring-white/20">
-                <div class="flex items-center gap-2">
-                  <span class="flex h-4 w-4 items-center justify-center rounded bg-white/10 text-[10px]">💼</span>
-                  <span>Experience</span>
-                </div>
-              </button>
-              <button data-page="education" class="tabbtn tab-btn relative rounded-xl px-3 py-2 text-sm text-slate-200/90 hover:bg-white/5">
-                <div class="flex items-center gap-2">
-                  <span class="flex h-4 w-4 items-center justify-center rounded bg-white/10 text-[10px]">🎓</span>
-                  <span>Education</span>
-                </div>
-              </button>
-              <button data-page="hobbies" class="tabbtn tab-btn relative rounded-xl px-3 py-2 text-sm text-slate-200/90 hover:bg-white/5">
-                <div class="flex items-center gap-2">
-                  <span class="flex h-4 w-4 items-center justify-center rounded bg-white/10 text-[10px]">🎮</span>
-                  <span>Hobbies</span>
-                </div>
-              </button>
-              <button data-page="references" class="tabbtn tab-btn relative rounded-xl px-3 py-2 text-sm text-slate-200/90 hover:bg-white/5">
-                <div class="flex items-center gap-2">
-                  <span class="flex h-4 w-4 items-center justify-center rounded bg-white/10 text-[10px]">👥</span>
-                  <span>References</span>
-                </div>
-              </button>
-              <button data-page="download" class="tabbtn tab-btn relative rounded-xl px-3 py-2 text-sm text-slate-200/90 hover:bg-white/5">
-                <div class="flex items-center gap-2">
-                  <span class="flex h-4 w-4 items-center justify-center rounded bg-white/10 text-[10px]">⬇️</span>
-                  <span>Download</span>
-                </div>
-              </button>
+              <button data-page="experience" class="tabbtn tab-btn relative rounded-xl px-3 py-2 text-sm text-slate-200/90 bg-white/10 ring-1 ring-white/20">💼 Experience</button>
+              <button data-page="education" class="tabbtn tab-btn relative rounded-xl px-3 py-2 text-sm text-slate-200/90 hover:bg-white/5">🎓 Education</button>
+              <button data-page="hobbies" class="tabbtn tab-btn relative rounded-xl px-3 py-2 text-sm text-slate-200/90 hover:bg-white/5">🎮 Hobbies</button>
+              <button data-page="references" class="tabbtn tab-btn relative rounded-xl px-3 py-2 text-sm text-slate-200/90 hover:bg-white/5">👥 References</button>
+              <button data-page="qualifications" class="tabbtn tab-btn relative rounded-xl px-3 py-2 text-sm text-slate-200/90 hover:bg-white/5">✅ Qualifications</button>
+              <button data-page="download" class="tabbtn tab-btn relative rounded-xl px-3 py-2 text-sm text-slate-200/90 hover:bg-white/5">⬇️ Download</button>
             </div>
 
             <div class="rounded-2xl bg-black/20 p-6 ring-1 ring-white/10 relative overflow-hidden">
               <div id="pages-container" class="relative">
-                <!-- EXPERIENCE -->
                 <section id="page-experience" class="page-panel active-panel grid gap-4 md:grid-cols-2">
-                  <!-- About me -->
                   <div class="rounded-2xl bg-white/10 p-5 ring-1 ring-white/20 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]">
                     <div class="mb-3 flex items-center justify-between gap-3">
                       <h3 class="text-base font-semibold tracking-tight text-white/95">About Me</h3>
                       <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">At a Glance</span>
                     </div>
                     <p class="text-sm text-slate-200/90">
-                      Motivated, responsible, and friendly high-school student with experience across customer service, hospitality, and outdoor activities. Reliable team member who adapts quickly, communicates well, and contributes positively to any environment.
+                      Enthusiastic and budding outdoor adventurer with experience across customer service, hospitality, sales, and physically demanding contract work. Reliable, practical, and people-focused, with strong interests in engineering, IT, sport, Scouting, and outdoor activities.
                     </p>
                   </div>
 
-                  <!-- Highlights -->
                   <div class="rounded-2xl bg-white/10 p-5 ring-1 ring-white/20 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]">
                     <div class="mb-3 flex items-center justify-between gap-3">
                       <h3 class="text-base font-semibold tracking-tight text-white/95">Highlights</h3>
                       <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">Quick</span>
                     </div>
                     <div class="flex flex-wrap gap-2">
-                      <span class="rounded-full bg-white/10 px-3 py-1.5 text-xs sm:text-sm text-slate-200/90 ring-1 ring-white/20">Customer-first</span>
-                      <span class="rounded-full bg-white/10 px-3 py-1.5 text-xs sm:text-sm text-slate-200/90 ring-1 ring-white/20">Safety-focused</span>
+                      <span class="rounded-full bg-white/10 px-3 py-1.5 text-xs sm:text-sm text-slate-200/90 ring-1 ring-white/20">People-focused</span>
+                      <span class="rounded-full bg-white/10 px-3 py-1.5 text-xs sm:text-sm text-slate-200/90 ring-1 ring-white/20">Customer experience</span>
                       <span class="rounded-full bg-white/10 px-3 py-1.5 text-xs sm:text-sm text-slate-200/90 ring-1 ring-white/20">Reliable under pressure</span>
-                      <span class="rounded-full bg-white/10 px-3 py-1.5 text-xs sm:text-sm text-slate-200/90 ring-1 ring-white/20">Fast learner</span>
-                      <span class="rounded-full bg-white/10 px-3 py-1.5 text-xs sm:text-sm text-slate-200/90 ring-1 ring-white/20">Team player</span>
-                      <span class="rounded-full bg-white/10 px-3 py-1.5 text-xs sm:text-sm text-slate-200/90 ring-1 ring-white/20">Good communicator</span>
+                      <span class="rounded-full bg-white/10 px-3 py-1.5 text-xs sm:text-sm text-slate-200/90 ring-1 ring-white/20">Leadership</span>
+                      <span class="rounded-full bg-white/10 px-3 py-1.5 text-xs sm:text-sm text-slate-200/90 ring-1 ring-white/20">Practical problem solver</span>
                     </div>
                   </div>
 
-                  <!-- Sales -->
                   <article class="hover-card rounded-2xl bg-white/10 p-0 ring-1 ring-white/20 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]" data-hover-card>
                     <button type="button" class="card-summary flex w-full items-center justify-between gap-3 px-5 py-4 text-left">
                       <div class="min-w-0">
-                        <h3 class="truncate text-base font-semibold tracking-tight text-white/95">Sales</h3>
-                        <p class="mt-1 truncate text-xs text-slate-300/85">99 Bikes</p>
+                        <h3 class="truncate text-base font-semibold tracking-tight text-white/95">99 Bikes Casual Sales Consultant</h3>
+                        <p class="mt-1 truncate text-xs text-slate-300/85">99 Bikes sales staff</p>
                       </div>
                       <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">Dec 2024 – Pres.</span>
                     </button>
                     <div class="card-details px-5 py-5">
                       <div class="mb-3 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                        <h3 class="text-base font-semibold tracking-tight text-white/95">Sales</h3>
+                        <h3 class="text-base font-semibold tracking-tight text-white/95">99 Bikes Casual Sales Consultant</h3>
                         <div class="flex flex-wrap items-center gap-2 text-xs">
                           <span class="rounded-lg bg-white/10 px-2 py-1 text-slate-300 ring-1 ring-white/20">99 Bikes</span>
                           <span class="rounded-lg bg-white/10 px-2 py-1 text-slate-300 ring-1 ring-white/20">Dec 2024 – Pres.</span>
                         </div>
                       </div>
-                      <ul class="list-disc space-y-2 pl-5 text-sm text-slate-200/90">
-                        <li>People-focused sales role with an emphasis on understanding customer needs.</li>
-                        <li>Ensuring each customer leaves with exactly what they both want and need.</li>
-                        <li>Providing product guidance, technical insight, and genuine service.</li>
-                      </ul>
+                      <p class="text-sm text-slate-200/90">
+                        Sales staff at 99 Bikes with a focus on ensuring a happy customer experience over making the sale.
+                      </p>
                     </div>
                   </article>
 
-                  <!-- Trolley -->
-                  <article class="hover-card rounded-2xl bg-white/10 p-0 ring-1 ring-white/20 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]" data-hover-card>
-                    <button type="button" class="card-summary flex w-full items-center justify-between gap-3 px-5 py-4 text-left">
-                      <div class="min-w-0">
-                        <h3 class="truncate text-base font-semibold tracking-tight text-white/95">Trolley Collector</h3>
-                        <p class="mt-1 truncate text-xs text-slate-300/85">Controlled Trolley Services (Kmart Stafford)</p>
-                      </div>
-                      <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">Dec 2023 – Jul 2024</span>
-                    </button>
-                    <div class="card-details px-5 py-5">
-                      <div class="mb-3 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                        <h3 class="text-base font-semibold tracking-tight text-white/95">Trolley Collector</h3>
-                        <div class="flex flex-wrap items-center gap-2 text-xs">
-                          <span class="rounded-lg bg-white/10 px-2 py-1 text-slate-300 ring-1 ring-white/20">Controlled Trolley Services (Kmart Stafford)</span>
-                          <span class="rounded-lg bg-white/10 px-2 py-1 text-slate-300 ring-1 ring-white/20">Dec 2023 – Jul 2024</span>
-                        </div>
-                      </div>
-                      <ul class="list-disc space-y-2 pl-5 text-sm text-slate-200/90">
-                        <li>Collected and maintained trolleys across large retail carparks.</li>
-                        <li>Provided approachable, helpful customer service on-site.</li>
-                        <li>Upheld safety and efficiency during peak trading periods.</li>
-                      </ul>
-                    </div>
-                  </article>
-
-                  <!-- Barista -->
-                  <article class="hover-card rounded-2xl bg-white/10 p-0 ring-1 ring-white/20 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]" data-hover-card>
-                    <button type="button" class="card-summary flex w-full items-center justify-between gap-3 px-5 py-4 text-left">
-                      <div class="min-w-0">
-                        <h3 class="truncate text-base font-semibold tracking-tight text-white/95">Barista</h3>
-                        <p class="mt-1 truncate text-xs text-slate-300/85">Zarraffa's Coffee, Brisbane</p>
-                      </div>
-                      <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">Sep 2022 – Jan 2023</span>
-                    </button>
-                    <div class="card-details px-5 py-5">
-                      <div class="mb-3 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                        <h3 class="text-base font-semibold tracking-tight text-white/95">Barista</h3>
-                        <div class="flex flex-wrap items-center gap-2 text-xs">
-                          <span class="rounded-lg bg-white/10 px-2 py-1 text-slate-300 ring-1 ring-white/20">Zarraffa's Coffee, Brisbane</span>
-                          <span class="rounded-lg bg-white/10 px-2 py-1 text-slate-300 ring-1 ring-white/20">Sep 2022 – Jan 2023</span>
-                        </div>
-                      </div>
-                      <ul class="list-disc space-y-2 pl-5 text-sm text-slate-200/90">
-                        <li>Prepared espresso beverages to brand standards at volume.</li>
-                        <li>Delivered friendly service and managed POS during rushes.</li>
-                      </ul>
-                    </div>
-                  </article>
-
-                  <!-- Mowing -->
                   <article class="hover-card rounded-2xl bg-white/10 p-0 ring-1 ring-white/20 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]" data-hover-card>
                     <button type="button" class="card-summary flex w-full items-center justify-between gap-3 px-5 py-4 text-left">
                       <div class="min-w-0">
@@ -357,84 +200,128 @@
                           <span class="rounded-lg bg-white/10 px-2 py-1 text-slate-300 ring-1 ring-white/20">Sep 2021 – Jul 2023</span>
                         </div>
                       </div>
-                      <ul class="list-disc space-y-2 pl-5 text-sm text-slate-200/90">
-                        <li>Delivered economical landscaping for local clients (weeding, ant control, pet-area cleanups).</li>
-                        <li>Managed bookings, quotes, and repeat customer relationships.</li>
-                      </ul>
+                      <p class="text-sm text-slate-200/90">
+                        Economical landscaping services to neighbours, including ant control, dog faeces cleanup, and weeding.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="hover-card rounded-2xl bg-white/10 p-0 ring-1 ring-white/20 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]" data-hover-card>
+                    <button type="button" class="card-summary flex w-full items-center justify-between gap-3 px-5 py-4 text-left">
+                      <div class="min-w-0">
+                        <h3 class="truncate text-base font-semibold tracking-tight text-white/95">Professional Barista</h3>
+                        <p class="mt-1 truncate text-xs text-slate-300/85">Zarraffa's Coffee, Brisbane</p>
+                      </div>
+                      <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">Sep 2022 – Jan 2023</span>
+                    </button>
+                    <div class="card-details px-5 py-5">
+                      <div class="mb-3 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                        <h3 class="text-base font-semibold tracking-tight text-white/95">Professional Barista</h3>
+                        <div class="flex flex-wrap items-center gap-2 text-xs">
+                          <span class="rounded-lg bg-white/10 px-2 py-1 text-slate-300 ring-1 ring-white/20">Zarraffa's Coffee, Brisbane</span>
+                          <span class="rounded-lg bg-white/10 px-2 py-1 text-slate-300 ring-1 ring-white/20">Sep 2022 – Jan 2023</span>
+                        </div>
+                      </div>
+                      <p class="text-sm text-slate-200/90">
+                        Providing customers with excellent service while brewing exemplary imported coffee.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="hover-card rounded-2xl bg-white/10 p-0 ring-1 ring-white/20 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]" data-hover-card>
+                    <button type="button" class="card-summary flex w-full items-center justify-between gap-3 px-5 py-4 text-left">
+                      <div class="min-w-0">
+                        <h3 class="truncate text-base font-semibold tracking-tight text-white/95">Ridari Trolley Services</h3>
+                        <p class="mt-1 truncate text-xs text-slate-300/85">Kmart contract work via Ridari Pty Ltd</p>
+                      </div>
+                      <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">Past</span>
+                    </button>
+                    <div class="card-details px-5 py-5">
+                      <div class="mb-3 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                        <h3 class="text-base font-semibold tracking-tight text-white/95">Ridari Trolley Services</h3>
+                        <div class="flex flex-wrap items-center gap-2 text-xs">
+                          <span class="rounded-lg bg-white/10 px-2 py-1 text-slate-300 ring-1 ring-white/20">Ridari Pty Ltd</span>
+                          <span class="rounded-lg bg-white/10 px-2 py-1 text-slate-300 ring-1 ring-white/20">Past</span>
+                        </div>
+                      </div>
+                      <p class="text-sm text-slate-200/90">
+                        Highly physically demanding contract work for Kmart via Ridari Pty Ltd.
+                      </p>
                     </div>
                   </article>
                 </section>
 
-                <!-- EDUCATION -->
                 <section id="page-education" class="page-panel hidden-panel grid gap-4 md:grid-cols-2">
-                  <!-- UQ -->
+                  <article class="hover-card rounded-2xl bg-white/10 p-0 ring-1 ring-white/20 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]" data-hover-card>
+                    <button type="button" class="card-summary flex w-full items-center justify-between gap-3 px-5 py-4 text-left">
+                      <div class="min-w-0">
+                        <h3 class="truncate text-base font-semibold tracking-tight text-white/95">Queensland University of Technology</h3>
+                        <p class="mt-1 truncate text-xs text-slate-300/85">Mechanical &amp; Aerospace pathway</p>
+                      </div>
+                      <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">2026 Sem. 2 – Present</span>
+                    </button>
+                    <div class="card-details px-5 py-5">
+                      <div class="mb-3 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                        <h3 class="text-base font-semibold tracking-tight text-white/95">Queensland University of Technology</h3>
+                        <div class="flex flex-wrap items-center gap-2 text-xs">
+                          <span class="rounded-lg bg-white/10 px-2 py-1 text-slate-300 ring-1 ring-white/20">2026 Sem. 2 – Present</span>
+                        </div>
+                      </div>
+                      <p class="text-sm text-slate-200/90">
+                        Transferred due to conflict of intended pathway (UQ being more theory/research oriented than QUT). Still hoping to enter the aerospace field as an Aerostructures Engineer.
+                      </p>
+                    </div>
+                  </article>
+
                   <article class="hover-card rounded-2xl bg-white/10 p-0 ring-1 ring-white/20 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]" data-hover-card>
                     <button type="button" class="card-summary flex w-full items-center justify-between gap-3 px-5 py-4 text-left">
                       <div class="min-w-0">
                         <h3 class="truncate text-base font-semibold tracking-tight text-white/95">University of Queensland</h3>
-                        <p class="mt-1 truncate text-xs text-slate-300/85">Mechanical Engineer</p>
+                        <p class="mt-1 truncate text-xs text-slate-300/85">Mechanical &amp; Aerospace Engineering</p>
                       </div>
-                      <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">2026 – Present</span>
+                      <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">2026 Sem. 1 – Sem. 2</span>
                     </button>
                     <div class="card-details px-5 py-5">
                       <div class="mb-3 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                         <h3 class="text-base font-semibold tracking-tight text-white/95">University of Queensland</h3>
-                        <div class="flex flex-wrap items-center gap-2 text-xs">
-                          <span class="rounded-lg bg-white/10 px-2 py-1 text-slate-300 ring-1 ring-white/20">Mechanical Engineer</span>
-                          <span class="rounded-lg bg-white/10 px-2 py-1 text-slate-300 ring-1 ring-white/20">2026 – Present</span>
-                        </div>
-                      </div>
-                      <p class="text-sm text-slate-200/90">1st year Mechanical and Aerospace Engineering student</p>
-                    </div>
-                  </article>
-
-                  <!-- Kedron -->
-                  <article class="hover-card rounded-2xl bg-white/10 p-0 ring-1 ring-white/20 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]" data-hover-card>
-                    <button type="button" class="card-summary flex w-full items-center justify-between gap-3 px-5 py-4 text-left">
-                      <div class="min-w-0">
-                        <h3 class="truncate text-base font-semibold tracking-tight text-white/95">Senior Secondary (STEM &amp; Arts focus)</h3>
-                        <p class="mt-1 truncate text-xs text-slate-300/85">Kedron State High School, Brisbane</p>
-                      </div>
-                      <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">2020 – 2025</span>
-                    </button>
-                    <div class="card-details px-5 py-5">
-                      <div class="mb-3 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                        <h3 class="text-base font-semibold tracking-tight text-white/95">Senior Secondary (STEM &amp; Arts focus)</h3>
-                        <div class="flex flex-wrap items-center gap-2 text-xs">
-                          <span class="rounded-lg bg-white/10 px-2 py-1 text-slate-300 ring-1 ring-white/20">Kedron State High School, Brisbane</span>
-                          <span class="rounded-lg bg-white/10 px-2 py-1 text-slate-300 ring-1 ring-white/20">2020 – 2025</span>
-                        </div>
+                        <span class="rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">2026 Sem. 1 – Sem. 2</span>
                       </div>
                       <p class="text-sm text-slate-200/90">
-                        Math Methods, Japanese, Engineering, Physics, Literature, English &amp; Lit Extension; first trombone in Symphony Orchestra, Wind Symphony, Brass Ensemble (AMEB L7).
+                        First year studying mechanical and aerospace engineering with hopes to become a professional aerostructures engineer.
                       </p>
                     </div>
                   </article>
 
-                  <!-- Ascot -->
                   <article class="hover-card rounded-2xl bg-white/10 p-0 ring-1 ring-white/20 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]" data-hover-card>
                     <button type="button" class="card-summary flex w-full items-center justify-between gap-3 px-5 py-4 text-left">
                       <div class="min-w-0">
-                        <h3 class="truncate text-base font-semibold tracking-tight text-white/95">Primary School</h3>
-                        <p class="mt-1 truncate text-xs text-slate-300/85">Ascot State School, Brisbane</p>
+                        <h3 class="truncate text-base font-semibold tracking-tight text-white/95">Kedron State High School</h3>
+                        <p class="mt-1 truncate text-xs text-slate-300/85">Brisbane</p>
+                      </div>
+                      <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">2019 – Present</span>
+                    </button>
+                    <div class="card-details px-5 py-5">
+                      <p class="text-sm text-slate-200/90">
+                        Studied Mathematical Methods, Japanese, Engineering, Physics, Literature, English and Literature Extension. Active in Symphony Orchestra, Wind Symphony and Brass Ensemble as first trombone (AMEB level 7).
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="hover-card rounded-2xl bg-white/10 p-0 ring-1 ring-white/20 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]" data-hover-card>
+                    <button type="button" class="card-summary flex w-full items-center justify-between gap-3 px-5 py-4 text-left">
+                      <div class="min-w-0">
+                        <h3 class="truncate text-base font-semibold tracking-tight text-white/95">Ascot Primary School</h3>
+                        <p class="mt-1 truncate text-xs text-slate-300/85">Brisbane</p>
                       </div>
                       <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">2013 – 2019</span>
                     </button>
                     <div class="card-details px-5 py-5">
-                      <div class="mb-3 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                        <h3 class="text-base font-semibold tracking-tight text-white/95">Primary School</h3>
-                        <div class="flex flex-wrap items-center gap-2 text-xs">
-                          <span class="rounded-lg bg-white/10 px-2 py-1 text-slate-300 ring-1 ring-white/20">Ascot State School, Brisbane</span>
-                          <span class="rounded-lg bg-white/10 px-2 py-1 text-slate-300 ring-1 ring-white/20">2013 – 2019</span>
-                        </div>
-                      </div>
                       <p class="text-sm text-slate-200/90">
-                        Core subjects, ensembles incl. Senior Band, Brass Ensemble, Stage Band (AMEB L4).
+                        Core subjects plus Advanced Colouring-In. Performed in Senior Band, Brass Ensemble and Stage Band as second trombone (AMEB level 4).
                       </p>
                     </div>
                   </article>
 
-                  <!-- Skills snapshot -->
                   <div class="rounded-2xl bg-white/10 p-5 ring-1 ring-white/20 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)] md:col-span-2">
                     <div class="mb-3 flex items-center justify-between gap-3">
                       <h3 class="text-base font-semibold tracking-tight text-white/95">Skills Snapshot</h3>
@@ -445,30 +332,20 @@
                       <span class="whitespace-nowrap rounded-full bg-white/10 px-4 py-2 text-xs sm:text-sm ring-1 ring-white/20">Leadership</span>
                       <span class="whitespace-nowrap rounded-full bg-white/10 px-4 py-2 text-xs sm:text-sm ring-1 ring-white/20">Communication</span>
                       <span class="whitespace-nowrap rounded-full bg-white/10 px-4 py-2 text-xs sm:text-sm ring-1 ring-white/20">Planning</span>
-                      <span class="whitespace-nowrap rounded-full bg-white/10 px-4 py-2 text-xs sm:text-sm ring-1 ring-white/20">Technology (IT &amp; hardware)</span>
-                      <span class="whitespace-nowrap rounded-full bg-white/10 px-4 py-2 text-xs sm:text-sm ring-1 ring-white/20">Customer Service</span>
-                      <span class="whitespace-nowrap rounded-full bg-white/10 px-4 py-2 text-xs sm:text-sm ring-1 ring-white/20">Time Management</span>
-                      <span class="whitespace-nowrap rounded-full bg-white/10 px-4 py-2 text-xs sm:text-sm ring-1 ring-white/20">Problem Solving</span>
-                      <span class="whitespace-nowrap rounded-full bg-white/10 px-4 py-2 text-xs sm:text-sm ring-1 ring-white/20">Basic Japanese</span>
+                      <span class="whitespace-nowrap rounded-full bg-white/10 px-4 py-2 text-xs sm:text-sm ring-1 ring-white/20">Technology</span>
                     </div>
                   </div>
                 </section>
 
-                <!-- HOBBIES -->
                 <section id="page-hobbies" class="page-panel hidden-panel grid gap-4 md:grid-cols-2">
-                  <!-- Helper: hobby card template repeated -->
                   <article class="hover-card rounded-2xl bg-white/10 p-0 ring-1 ring-white/20 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]" data-hover-card>
                     <button type="button" class="card-summary flex w-full items-center justify-between gap-3 px-5 py-4 text-left">
-                      <h3 class="truncate text-base font-semibold tracking-tight text-white/95">Scouting &amp; Leadership</h3>
-                      <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">Awards</span>
+                      <h3 class="truncate text-base font-semibold tracking-tight text-white/95">Scouting</h3>
+                      <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">Rover Scout</span>
                     </button>
                     <div class="card-details px-5 py-5">
-                      <div class="mb-3 flex items-center justify-between gap-2">
-                        <h3 class="text-base font-semibold tracking-tight text-white/95">Scouting &amp; Leadership</h3>
-                        <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">Awards</span>
-                      </div>
                       <p class="text-sm text-slate-200/90">
-                        Grey Wolf Award (2018), Australian Scout Medallion (2022), King’s Scout Award (2025). Venturer service leader at Australian Jamboree 2025. Regularly plan and run activities.
+                        Received Grey Wolf Award (2018), completed Australian Scout Medallion (2022), and completed King’s Scout Award (2025). Currently a Rover Scout (2026 – present).
                       </p>
                     </div>
                   </article>
@@ -479,97 +356,98 @@
                       <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">Club &amp; Rep</span>
                     </button>
                     <div class="card-details px-5 py-5">
-                      <div class="mb-3 flex items-center justify-between gap-2">
-                        <h3 class="text-base font-semibold tracking-tight text-white/95">Baseball</h3>
-                        <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">Club &amp; Rep</span>
-                      </div>
                       <p class="text-sm text-slate-200/90">
-                        Playing since 2016; state/national representative level since 2017. Premier team for Windsor Royals Senior League 2023/24 season.
+                        Playing at club level from 2016 and state/national representative level from 2017. Premier team for Windsor Royals Senior League 2023/24 season.
                       </p>
                     </div>
                   </article>
 
                   <article class="hover-card rounded-2xl bg-white/10 p-0 ring-1 ring-white/20 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]" data-hover-card>
                     <button type="button" class="card-summary flex w-full items-center justify-between gap-3 px-5 py-4 text-left">
-                      <h3 class="truncate text-base font-semibold tracking-tight text-white/95">Mountain Biking &amp; Cycle Touring</h3>
+                      <h3 class="truncate text-base font-semibold tracking-tight text-white/95">Mountain Biking/Cycle Touring</h3>
                       <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">Outdoors</span>
                     </button>
                     <div class="card-details px-5 py-5">
-                      <div class="mb-3 flex items-center justify-between gap-2">
-                        <h3 class="text-base font-semibold tracking-tight text-white/95">Mountain Biking &amp; Cycle Touring</h3>
-                        <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">Outdoors</span>
-                      </div>
-                      <p class="text-sm text-slate-200/90">BVRT completed three times; introducing bikepacking to Scouts and peers.</p>
+                      <p class="text-sm text-slate-200/90">
+                        Have ridden the BVRT three times and planning on introducing bikepacking to Scouts.
+                      </p>
                     </div>
                   </article>
 
                   <article class="hover-card rounded-2xl bg-white/10 p-0 ring-1 ring-white/20 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]" data-hover-card>
                     <button type="button" class="card-summary flex w-full items-center justify-between gap-3 px-5 py-4 text-left">
-                      <h3 class="truncate text-base font-semibold tracking-tight text-white/95">Karate (Go-Kan-Ryu)</h3>
+                      <h3 class="truncate text-base font-semibold tracking-tight text-white/95">Karate</h3>
                       <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">Brown Belt</span>
                     </button>
                     <div class="card-details px-5 py-5">
-                      <div class="mb-3 flex items-center justify-between gap-2">
-                        <h3 class="text-base font-semibold tracking-tight text-white/95">Karate (Go-Kan-Ryu)</h3>
-                        <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">Brown Belt</span>
-                      </div>
                       <p class="text-sm text-slate-200/90">
-                        Training since 2011; assisting in junior dojo sessions and working toward 1st Black Tip.
+                        Trained in Go-Kan-Ryu discipline from 2011; currently Brown Belt and training for 1st Black Tip.
                       </p>
                     </div>
                   </article>
 
                   <article class="hover-card rounded-2xl bg-white/10 p-0 ring-1 ring-white/20 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]" data-hover-card>
                     <button type="button" class="card-summary flex w-full items-center justify-between gap-3 px-5 py-4 text-left">
-                      <h3 class="truncate text-base font-semibold tracking-tight text-white/95">CAD and 3D Printing</h3>
+                      <h3 class="truncate text-base font-semibold tracking-tight text-white/95">Japanese Culture</h3>
+                      <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">Language &amp; Travel</span>
+                    </button>
+                    <div class="card-details px-5 py-5">
+                      <p class="text-sm text-slate-200/90">
+                        Through studying the language and karate, discovered Japanese food, animation and travel.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="hover-card rounded-2xl bg-white/10 p-0 ring-1 ring-white/20 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]" data-hover-card>
+                    <button type="button" class="card-summary flex w-full items-center justify-between gap-3 px-5 py-4 text-left">
+                      <h3 class="truncate text-base font-semibold tracking-tight text-white/95">3D Printing</h3>
                       <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">Maker</span>
                     </button>
                     <div class="card-details px-5 py-5">
-                      <div class="mb-3 flex items-center justify-between gap-2">
-                        <h3 class="text-base font-semibold tracking-tight text-white/95">CAD and 3D Printing</h3>
-                        <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">Maker</span>
-                      </div>
                       <p class="text-sm text-slate-200/90">
-                        Owner of a Bambu Labs A1, and enjoy using Autodesk Inventor and Blender to create new things to be printed.
+                        Owner of a Bambu Labs A1 and enjoy using Autodesk Inventor and Blender to design new things to be printed.
                       </p>
                     </div>
                   </article>
                 </section>
 
-                <!-- REFERENCES -->
                 <section id="page-references" class="page-panel hidden-panel grid gap-4 md:grid-cols-2">
                   <div class="rounded-2xl bg-white/10 p-5 ring-1 ring-white/20 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]">
                     <div class="mb-3 flex items-center justify-between gap-3">
-                      <h3 class="text-base font-semibold tracking-tight text-white/95">Kedron State High School</h3>
-                      <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">Teachers</span>
+                      <h3 class="text-base font-semibold tracking-tight text-white/95">Alicia Browne</h3>
+                      <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">Ridari Pty Ltd</span>
                     </div>
-                    <p class="text-sm text-slate-200/90">Available on request.</p>
+                    <p class="text-sm text-slate-200/90">P: 0478023575</p>
+                    <p class="text-sm text-slate-200/90">E: info@ridari.au</p>
                   </div>
 
                   <div class="rounded-2xl bg-white/10 p-5 ring-1 ring-white/20 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]">
                     <div class="mb-3 flex items-center justify-between gap-3">
-                      <h3 class="text-base font-semibold tracking-tight text-white/95">Employers &amp; Team Leaders</h3>
-                      <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">Workplace supervisors</span>
+                      <h3 class="text-base font-semibold tracking-tight text-white/95">Others On Request</h3>
+                      <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">References</span>
                     </div>
-                    <p class="text-sm text-slate-200/90">Available on request.</p>
+                    <p class="text-sm text-slate-200/90">Additional references available on request.</p>
                   </div>
                 </section>
 
-                <!-- DOWNLOAD -->
+                <section id="page-qualifications" class="page-panel hidden-panel grid gap-4 md:grid-cols-2">
+                  <div class="rounded-2xl bg-white/10 p-5 ring-1 ring-white/20 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]">
+                    <div class="mb-3 flex items-center justify-between gap-3">
+                      <h3 class="text-base font-semibold tracking-tight text-white/95">First Aid &amp; CPR</h3>
+                      <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">Current</span>
+                    </div>
+                    <p class="text-sm text-slate-200/90">Current First Aid and CPR qualification.</p>
+                  </div>
+                </section>
+
                 <section id="page-download" class="page-panel hidden-panel grid gap-4">
                   <div class="rounded-2xl bg-white/10 p-5 ring-1 ring-white/20 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]">
                     <div class="mb-3 flex items-center justify-between gap-3">
                       <h3 class="text-base font-semibold tracking-tight text-white/95">Download my resume (Oscar_Beckett_CV_2.docx)</h3>
                       <span class="shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs text-slate-300 ring-1 ring-white/20">Printable</span>
                     </div>
-                    <p class="mb-4 text-sm text-slate-200/90">
-                      Click below to download the less cool Word document version of my resume.
-                    </p>
-                    <a
-                      href="./Oscar_Beckett_CV_2.docx"
-                      download
-                      class="inline-flex items-center gap-2 rounded-xl bg-white/90 px-4 py-2 font-medium text-slate-900 ring-1 ring-white/30 transition hover:bg-white"
-                    >
+                    <p class="mb-4 text-sm text-slate-200/90">Click below to download the Word document version of my resume.</p>
+                    <a href="./Oscar_Beckett_CV_2.docx" download class="inline-flex items-center gap-2 rounded-xl bg-white/90 px-4 py-2 font-medium text-slate-900 ring-1 ring-white/30 transition hover:bg-white">
                       ⬇️ Download Resume
                     </a>
                   </div>
@@ -578,7 +456,6 @@
             </div>
           </div>
 
-          <!-- Footer -->
           <footer class="flex items-center justify-between px-1 text-xs text-slate-400/80">
             <button id="footer-hover" class="flex items-center gap-2 cursor-pointer" type="button">
               <span class="inline-flex h-3.5 w-3.5 items-center justify-center">🔗</span>
@@ -591,11 +468,9 @@
     </div>
 
     <script>
-      // Values for clipboard copy
       const emailValue = "oscar.p.beckett@gmail.com";
-      const phoneValue = "+61434470221";
-
-      const pages = ["experience", "education", "hobbies", "references", "download"];
+      const phoneValue = "0434470221";
+      const pages = ["experience", "education", "hobbies", "references", "qualifications", "download"];
       let currentPage = "experience";
 
       function showToast(text) {
@@ -609,9 +484,7 @@
         showToast._timer = setTimeout(() => {
           toast.style.opacity = "0";
           toast.style.transform = "translate(-50%, -10px)";
-          setTimeout(() => {
-            toast.classList.add("opacity-0", "pointer-events-none");
-          }, 200);
+          setTimeout(() => toast.classList.add("opacity-0", "pointer-events-none"), 200);
         }, 1500);
       }
 
@@ -643,27 +516,18 @@
         if (!pages.includes(page)) return;
         currentPage = page;
 
-        // Sidebar active styles
         document.querySelectorAll("#sidebar-nav button[data-page]").forEach((btn) => {
           const key = btn.getAttribute("data-page");
-          if (key === page) {
-            btn.classList.add("bg-white/10", "ring-1", "ring-white/20");
-          } else {
-            btn.classList.remove("bg-white/10", "ring-1", "ring-white/20");
-          }
+          if (key === page) btn.classList.add("bg-white/10", "ring-1", "ring-white/20");
+          else btn.classList.remove("bg-white/10", "ring-1", "ring-white/20");
         });
 
-        // Tab bar active styles
         document.querySelectorAll(".tab-btn").forEach((btn) => {
           const key = btn.getAttribute("data-page");
-          if (key === page) {
-            btn.classList.add("bg-white/10", "ring-1", "ring-white/20");
-          } else {
-            btn.classList.remove("bg-white/10", "ring-1", "ring-white/20");
-          }
+          if (key === page) btn.classList.add("bg-white/10", "ring-1", "ring-white/20");
+          else btn.classList.remove("bg-white/10", "ring-1", "ring-white/20");
         });
 
-        // Panels
         pages.forEach((key) => {
           const panel = document.getElementById("page-" + key);
           if (!panel) return;
@@ -679,11 +543,8 @@
 
       function wireHoverCards() {
         document.querySelectorAll("[data-hover-card]").forEach((card) => {
-          const open = () => card.classList.add("open");
-          const close = () => card.classList.remove("open");
-          card.addEventListener("mouseenter", open);
-          card.addEventListener("mouseleave", close);
-          // Tap toggle (mobile)
+          card.addEventListener("mouseenter", () => card.classList.add("open"));
+          card.addEventListener("mouseleave", () => card.classList.remove("open"));
           card.addEventListener("click", () => card.classList.toggle("open"));
         });
       }
@@ -709,21 +570,14 @@
 
       document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("year-span").textContent = new Date().getFullYear();
-
-        // Wire nav + tabs
         document.querySelectorAll("button[data-page]").forEach((btn) => {
           btn.addEventListener("click", () => setPage(btn.getAttribute("data-page")));
         });
-
-        // Wire behaviors
         wireHoverCards();
         wireFooter();
         wireQuickActions();
-
-        // Initial page
         setPage(currentPage);
 
-        // Tiny smoke checks
         try {
           pages.forEach((p) => console.assert(document.getElementById("page-" + p), "[TEST] missing page:", p));
           console.log("[TEST] HTML smoke tests passed");
